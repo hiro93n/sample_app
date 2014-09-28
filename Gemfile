@@ -23,6 +23,10 @@ group :test do
   gem 'capybara', '2.1.0'
 end
 
+# twitter boot strap
+gem 'bootstrap-sass' ,'2.3.2.0'
+gem 'sprockets','2.11.0'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
