@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   #user情報を表示する
   def show
     @user = User.find(params[:id])
+    @microposts = @user.microposts.paginate(page: params[:page])
   end
 
   # サインアップしてたらルートに返す
@@ -66,12 +67,13 @@ class UsersController < ApplicationController
 
     # Before actions
 
-    def signed_in_user
-      unless signed_in?
-        store_location
-        redirect_to signin_url, notice: "Please sign in."
-      end
-    end
+    #helpers/session_helper.rbに移動
+    #def signed_in_user
+    #  unless signed_in?
+    #    store_location
+    #    redirect_to signin_url, notice: "Please sign in."
+    #  end
+    #end
 
     def correct_user
       @user = User.find(params[:id])

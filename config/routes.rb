@@ -1,10 +1,12 @@
 #Rails.application.routes.draw do
 SampleApp::Application.routes.draw do
 
+  #user関連全部引き取る
   resources :users
-
   #サインインがnew、セッションが作られてcreate、サインアウトがdestroy
   resources :sessions, only: [:new, :create, :destroy]
+  #セッションはcreateとdestroyだけ
+  resources :microposts, only: [:create, :destroy]
 
   root  'static_pages#home'
 
