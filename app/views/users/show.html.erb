@@ -12,7 +12,8 @@
     </section>
   </aside>
   <div class="span8">
-    <%= render 'follow_form' if signed_in? %>t
+    <%= render 'follow_form' if signed_in? %>
+  </div>
   <div class="span8">
    <% if @user.microposts.any? %>
      <h3>MicroPosts(<%= @user.microposts.count %>)</h3>

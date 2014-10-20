@@ -15,7 +15,6 @@ SampleApp::Application.routes.draw do
   #リレーションシップ関連
   resources :relationships, only: [:create, :destroy]
 
-
   root  'static_pages#home'
 
   #サインイン関連
