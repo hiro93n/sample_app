@@ -46,6 +46,11 @@ class User < ActiveRecord::Base
     relationships.find_by(followed_id: other_user.id).destroy
   end
 
+#フィード用
+  def feed
+    Micropost.from_users_followed_by(self)
+  end
+
   private
 
     def create_remember_token
